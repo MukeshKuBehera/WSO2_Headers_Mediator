@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/test" name="Header_API" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST">
+        <inSequence>
+            <property name="Content-Type" scope="default" type="STRING" value="application/json"/>
+            <header name="X-FakeAPI-Action" scope="transport" value="register"/>
+            <property expression="json-eval($.external_id)" name="external_id" scope="default" type="STRING"/>
+            <log>
+                <property expression="json-eval($.external_id)" name="ID"/>
+            </log>
+            <payloadFactory media-type="json">
+                <format>{&#xd;
+"external_id":"$1"&#xd;
+}</format>
+                <args>
+                    <arg evaluator="json" expression="$.external_id"/>
+                </args>
+            </payloadFactory>
+            <call>
+                <endpoint key="Header_EP"/>
+                <source type="body"/>
+                <target type="body"/>
+            </call>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

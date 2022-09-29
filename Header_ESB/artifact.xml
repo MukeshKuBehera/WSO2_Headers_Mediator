@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="Header_EP" groupId="com.temp.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/Header_EP.xml</file>
+    </artifact>
+    <artifact name="Header_API" groupId="com.temp.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/Header_API.xml</file>
+    </artifact>
+    <artifact name="Header_API_swagger" groupId="com.temp.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/Header_API_swagger.yaml</file>
+    </artifact>
+    <artifact name="Header_API_metadata" groupId="com.temp.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/Header_API_metadata.yaml</file>
+    </artifact>
+</artifacts>
